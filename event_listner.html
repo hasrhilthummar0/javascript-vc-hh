@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <p id="para">Lorem ipsum dolor sit amet consectetur adipisicing elit. Impedit, recusandae!</p>
+    <button id="hide">hide</button>
+    <button id="show">show</button>
+    <script>
+        let paragraph = document.getElementById('para')
+        let hide = document.getElementById('hide')
+        let show = document.getElementById('show')
+
+        show.addEventListener('click',function()
+    {
+        paragraph.style.color = 'blue'
+    })
+
+        hide.addEventListener('click',function()
+    {
+        paragraph.style.color = '';
+    })
+
+    // hide.removeEventListener('click',function())
+    </script>
+</body>
+
+</html>

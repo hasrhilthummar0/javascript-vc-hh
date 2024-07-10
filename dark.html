@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <p id="para">
+        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Odio voluptatum ad hic. Maxime adipisci totam
+        blanditiis nemo atque, magnam ducimus recusandae nesciunt ipsum, libero harum est hic qui asp  ernatur doloremque
+        fugiat excepturi laboriosam, porro vel facilis et molestias natus ipsa ab? Cumque nisi praesentium animi
+        deleniti autem beatae tempora aspernatur placeat harum quasi quas, enim, dolorum dolor? Dicta reiciendis fugit
+        odio accusantium, rem modi ipsum labore aliquid culpa, mollitia reprehenderit omnis debitis. Delectus, nemo sit.
+        Mollitia nesciunt expedita quos perferendis eveniet molestiae quas, ut ratione numquam, minus doloremque omnis!
+        Nulla, dolore. Esse corrupti sed, ea iure rem dolor mollitia est!
+    </p>
+    <div class="text">
+        click here to change dark mode
+    </div>
+
+    <button id="btn" onclick="dark()">
+        dark mode
+    </button>
+    <script>
+        function dark() {
+            var element = document.body;
+            element.classList.      ("dark-mode");
+        }
+    </script>
+    <style>
+        body {
+
+            background-color: white;
+            color: black;
+
+        }
+        #btn:hover{
+        border-radius: 40px;
+        
+        }
+        .dark-mode {
+            background-color: black;
+            color: white;
+        }
+    </style>
+</body>
+
+</html>             

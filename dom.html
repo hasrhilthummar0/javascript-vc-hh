@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        .main {
+            margin: 0px 0px 0px 10px;
+        }
+
+        .btn {
+            margin-left: 30px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="main">
+        <label for="">enter value 1 :</label>
+        <input type="text" class="first">
+        <br><br>
+        <label for="">enter value 2 :</label>
+        <input type="text" class="second">
+        <br><br>
+        <button onclick="sum()">Addition</button>   
+        <p class="result"></p>
+    </div>
+    <script>
+        function sum() {
+            let first = Number(document.querySelector(".first").value);
+            let second = Number(document.querySelector(".second").value);
+            const add = first + second;
+            console.log(add);
+            document.querySelector(".result").innerHTML = "addition: " + add;
+        
+        }
+    </script>
+</body>
+
+</html>

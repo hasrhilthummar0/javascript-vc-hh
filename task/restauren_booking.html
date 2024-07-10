@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Restaurant Booking Form</title>
+    <style>
+        .main {
+            display: block;
+            margin-top: 10px;
+            font-weight: lighter;
+            background-repeat: no-repeat;
+        }
+        form{
+            display: block;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1><ul>Restaurant'sBooking Form</h1>
+    <div class="main">
+        <!-- <form action=""> -->
+        <label for="">Choice of Booking</label>
+        <select id="booking-type" name="booking-type" style="width: 177px;">
+            <option value="Half day booking">Half day booking</option>
+            <option value="Hourly booking">Hourly booking</option>
+            <option value="Full day booking">Full day booking</option>
+        </select><br><br>
+        <label for="Name">UserName</label>
+        <input type="text" class="input" id="Name" required><br><br>
+        <label for="number">Mobile No</label>
+        <input type="text" class="input" id="number" required><br><br>
+        <label for="email">Email</label>
+        <input type="email" class="input" id="email" required><br><br>
+        <label for="person">No of Person</label>
+        <input type="number" class="input" id="person" required><br><br>
+        <label for="date">Date</label>
+        <input type="date" class="input" id="date" required><br><br>
+        <label for="time" id="time-label">Time</label>
+        <input type="time" class="input" id="time" required><br><br>
+        <label for="slot" id="slot-label">Slot</label>
+        <select id="slot" required>
+            <option value="">Select a Slot</option>
+            <option value="Breakfast">Breakfast</option>
+            <option value="Lunch">Lunch</option>
+            <option value="Dinner">Dinner</option>
+        </select><br><br>
+
+        <button id="submit">Submit</button>
+        <!-- </form> -->
+    </ul>
+    </div>
+    <p id="ans">
+    </p>
+
+</body>
+<script>
+    console.log(0=== true);
+    document.getElementById('booking-type').addEventListener('change', function () {
+        let bookingType = this.value;
+        let slotLabel = document.getElementById('slot-label');
+        let slotInput = document.getElementById('slot');
+
+        if (bookingType == 'Full day booking') {
+            slotLabel.style.display = 'none'
+            slotInput.style.display = 'none';
+        }    
+        else {
+            slotLabel.style.display = 'flex'
+            slotInput.style.display = 'flex'
+        }
+    });
+
+    let btn = document.querySelector("#submit");
+    btn.addEventListener('click', function () {
+        let p = document.querySelector("#Name").value;
+        let number = document.getElementById('number').value;
+        let email = document.getElementById('email').value;
+        let person = document.getElementById('person').value;
+        let date = document.getElementById('date').value;
+        let time = document.getElementById('time').value;
+        let slot = document.getElementById('slot').value;
+        let booking = document.getElementById('booking-type').value;
+        let result = document.getElementById('ans');
+        let booking_Details = {
+            booking: booking,
+            username: p,
+            MobileNumber: number,
+            Email: email,
+            person: person,
+            Date: date,
+            Time: time,
+            slot: slot,
+        }
+
+        result.innerHTML = `Booking : ${booking_Details.booking},Username : ${booking_Details.username}, Mobile No : ${booking_Details.MobileNumber}, Email : ${booking_Details.Email},No of person : ${booking_Details.person},Date : ${booking_Details.Date},Slot : ${slot}`
+        console.log(booking_Details);
+    }); 
+</script>
+</html>

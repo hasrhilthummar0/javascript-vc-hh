@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+
+
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #num2 ,  #num3{
+            margin-top: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <label for="">Enter First Number : </label>
+    <input type="" id="num1"><br>
+    <label for="">Enter Second Number : </label>
+    <input type="" id="num2"><br>
+    <label for="">Enter Third Number :</label>
+    <input type="text" id="num3">
+    <br>
+    <button id="btn1" style="margin-top: 10px;">+</button>
+    <button id="btn2" style="margin-top: 10px;">-</button>
+    <button id="btn3" style="margin-top: 10px;">*</button>
+    <button id="btn4" style="margin-top: 10px;">/</button>
+    <button id="maximum" onclick="MaxNumber()">check maximum no</button>
+    <p id="para"> </p>
+    <script>
+
+
+        // for sum button
+
+        let btn1 = document.querySelector('#btn1')
+        btn1.addEventListener('click', function () {
+            let num1 = Number(document.querySelector('#num1').value)
+            let num2 = Number(document.querySelector('#num2').value)
+            let num3 = Number(document.getElementById('num3').value)
+            let para = document.querySelector('#para')
+            para.innerHTML = num1 + num2 + num3;
+        })
+
+        // for substrction button
+
+        let btn2 = document.getElementById('btn2')
+        btn2.addEventListener('click', function () {
+            let num1 = Number(document.getElementById('num1').value)
+            let num2 = Number(document.getElementById('num2').value)
+            let num3 = Number(document.getElementById('num3').value)
+            let para = document.getElementById('para')
+            para.innerHTML = num1 - num2 - num3
+        })
+
+        // for multipliatipn button
+
+        let btn3 = document.getElementById('btn3')
+        btn3.addEventListener('click', function () {
+            let num1 = Number(document.getElementById('num1').value)
+            let num2 = Number(document.getElementById('num2').value)
+            let num3 = Number(document.getElementById('num3').value)
+            let para = document.getElementById('para')
+            para.innerHTML = num1 * num2 * num3;
+        })
+       
+        // for divison button
+
+        let btn4 = document.getElementById('btn4')
+        btn4.addEventListener('click', function () {
+            let num1 = Number(document.getElementById('num1').value)
+            let num2 = Number(document.getElementById('num2').value)
+            let para = document.getElementById('para')
+            para.innerHTML = num1 / num2
+            console.log(num1 / num2);
+        })
+
+        // for checkmaximum number
+
+        function MaxNumber() {
+            let num1 = Number(document.getElementById('num1').value)
+            let num2 = Number(document.getElementById('num2').value)
+            let num3 = Number(document.getElementById('num3').value)
+            let para = document.getElementById('para')
+            if (num1 > num2 && num1 > num3) {
+                para.innerHTML = "large number is " + num1
+            }
+            else if (num2 > num1 && num2 > num3) {
+                para.innerHTML = "largest number is " + num2
+            }
+            else if(num3 > num1 && num3){
+                para.innerHTML = "largest number is " + num3
+            }
+            else {
+                para.innerHTML = "all  number is equal"
+            }
+        }
+    </script>
+</body>
+
+</html>

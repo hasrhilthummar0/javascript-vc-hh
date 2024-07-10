@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Generate Password</title>
+</head>
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+    }
+</style>
+
+<body>
+    <h1>Generate Random Password</h1>
+    <input type="text" id="passbox"><br><br>
+    <button onclick="GeneratePassword()">Generate Password</button>
+    <script>
+        let passbox = document.getElementById('passbox');
+        let uppercase = 'ABCDEFGHIJKLMNOPQRTSUVWXYZ';
+        let lowercase = 'abcdefghijklmnopqrstuvwxyz'
+        let number = '1234567890';
+        let symaball = '!@#$%^&*()_~';
+        let passlength = 10;
+        let all = uppercase + lowercase + number + symaball;
+        function GeneratePassword() {
+            let password = '';
+            password = password + uppercase[Math.floor(Math.random() * uppercase.length)]
+            password = password + lowercase[Math.floor(Math.random() * lowercase.length)]
+            password = password + symaball[Math.floor(Math.random() * symaball.length)]
+            password = password + number[Math.floor(Math.random() * number.length)]
+
+            while (passlength > password.length) {
+                password += all[Math.floor(Math.random() * all.length)]
+
+            }
+            passbox.value = password;
+
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sum and percentile</title>
+</head>
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+    }
+
+    .input {
+        display: block;
+        margin-top: 30px;
+        margin-inline-start: 10px;
+    }
+
+    #add {
+        margin-top: 30px;
+        margin-left: 10px;
+    }
+
+    #sum {
+        margin-left: 30px;
+        margin-top: 20px;
+    }
+    #percentage{
+        margin-top: 10px;
+        margin-left: 30px;
+    }
+</style>
+
+<body>
+    <input type="text" class="input">
+    <input type="text" class="input">
+    <input type="text" class="input">
+    <input type="text" class="input">
+    <input type="text" class="input">
+    <input type="text" class="input">
+    <input type="text" class="input">
+    <input type="text" class="input">
+    <button id="add" style="border: none; border-radius: 20px; font-size: largerh;height: 47px;width: 95px;">
+        Add
+    </button>
+    <div id="sum">
+    </div>
+
+    <div id="percentage">
+    </div>
+    <script>
+
+        // for sum of all inputs
+        let addButton = document.getElementById('add');
+        addButton.addEventListener('click', function () {
+            let input = document.querySelectorAll('.input');
+            let sum = 0;
+            for (let addition of input) {
+                sum += Number(addition.value)
+            }
+            let pr = 0;
+
+            for (let percentile of input) {
+                pr += Number(percentile.value) / 8;
+            }
+            console.log(" Your Percentage IS : " + pr);
+            console.log(" Your Sum Is : " + sum);
+
+            document.getElementById('sum').innerHTML = "<h4>Sum Is :" + " " + sum + "</h4>";
+            document.getElementById('percentage').innerHTML = "<h4> Percentage Is :" + " " + pr + "</h4>";
+
+        })
+
+    </script>
+</body>
+
+</html>

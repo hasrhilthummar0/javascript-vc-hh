@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To-Do list</title>
+</head>
+
+<body>
+    <h1>My Todo List</h1>
+    <input type="text" id="search">
+    <button id="add">add</button>
+   <ul id="ul"></ul>
+
+    <script>
+
+        let add = document.getElementById('add')
+        add.addEventListener('click', function () {
+
+            // add new item
+            let search = document.getElementById('search').value;
+            document.getElementById('ul').innerHTML = `<li>${search}</li>`
+    
+        })
+            // clear item
+            document.getElementById('search').innerHTML = '';
+    </script>
+</body>
+
+</html>

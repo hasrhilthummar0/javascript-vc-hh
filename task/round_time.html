@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Round time</title>
+</head>
+<style>
+    div {
+        border-radius: 50%;
+        height: 200px;
+        width: 200px;
+        margin: auto;
+        margin-top: 10%;
+        border: 1px solid black;  
+    }
+    
+</style>
+
+<body>
+    <div id="color">
+      
+    </div>
+    <button id="start">Start</button>
+    <button id="stop">Stop</button>
+</body>
+<script>
+    // let start = document.getElementById('start');
+    // let stop = document.getElementById('stop');
+
+    // start.addEventListener('click',function(){
+    //     let color1  = ['black','green','yello']
+    //     let index = 0;
+    //     let color = document.getElementById('color');
+    //     color.style.backgroundColor = color1[index];
+    // })()
+    let startButton = document.getElementById('start');
+    let colorDiv = document.getElementById('color');
+    let colors = ['red', 'blue', 'green', 'yellow']; // Array of colors
+    let index = 0;
+    let mix;
+
+    function colorchange() {
+        colorDiv.style.backgroundColor = colors[index]
+        index++;
+        mix = setTimeout(colorchange, 1000)
+        colorDiv.textContent = index + 1
+    }
+
+    function stopcolor() {
+        clearTimeout(mix)
+    }
+    startButton.addEventListener('click', function () {
+        colorchange();
+    })
+
+    let stopButton = document.getElementById('stop')
+    stopButton.addEventListener('click', function () {
+        stopcolor();
+    })
+</script>
+
+</html>

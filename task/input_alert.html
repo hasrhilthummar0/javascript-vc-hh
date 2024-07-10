@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Input Alert</title>
+</head>
+
+
+<body>
+    <div class="main">
+  <p>Name</p>
+  <input type="text" required id="name">
+  <button id="submit" onclick="createDemo()">Submit</button>
+    </div>
+</body>
+    <script>
+        // let submit = document.getElementById('submit')
+        // submit.addEventListener('click',function(){
+        //     let value = document.getElementById('name').value;
+        //     alert("Welcome " + value);
+        // })
+        function createDemo(){
+            let name = document.getElementById('name').value;
+            let subBtn = document.getElementById('submit');
+           alert('your name is :'+ name);
+        }
+    </script>
+</html>

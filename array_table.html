@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Array Table</title>
+</head>
+<style>
+
+</style>
+<body>
+    <div id="first"></div>
+    <script>
+        // let order = "<table border='1'>"
+        // let arr = [['harshil', 'jay', 'nikunj'],
+        // ['thummar', 'patel', 'jani']]
+        // order += "<tr>"
+        // for (let index = 0; index < arr.length; index++) {
+
+        //     for (let i = 0; i < arr[index].length; i++) {
+        //         order += "<td>" + arr[index][i] + "</td>"
+
+        //     }
+        //  "<br>"
+
+        // }
+        // order+="</tr>"
+        // order+="</table>"
+        // document.getElementById('first').innerHTML += order
+
+        let arr = [['harshil', 'jay','sahdev','utsav','ujas'],
+        ['nirav', 'kapi','manthan','vishal','antish ']]
+        document.write("<table border='1'>");
+        for (let i = 0; i < arr.length; i++) {
+            document.write("<tr>")
+            for (let j = 0; j < arr[i].length; j++) {
+                document.write("<td>" + arr[i][j] + "</td>");
+            }
+            document.write("</tr>")
+        }
+
+        document.write("</table>");
+    </script>
+</body>
+
+</html>

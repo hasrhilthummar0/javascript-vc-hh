@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Qr Code Generate</title>
+</head>
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+        background-image: url(https://imgs.search.brave.com/zT2K-wpUskbGd7V4aqeVSp5IrOP0mR9EOBs497CKrUY/rs:fit:500:0:0/g:ce/aHR0cHM6Ly93YWxs/cGFwZXIuZm9yZnVu/LmNvbS9mZXRjaC84/YS84YWYyZTMzZTYw/MzNkZTdkYTQ3M2U5/YzcwNmI1YjI2Zi5q/cGVn)
+    }
+
+    #main {
+        height: 300px;
+        width: 300px;
+        background-position: center;
+        background-size: cover;
+        margin-left: 40%;
+        margin-top: 10%;
+        background-color: black;
+        color: white;
+        border-radius: 20px;
+        border: 1px solid #000;
+    }
+</style>
+
+<body>
+    <div id="main">
+        <h1 style="margin-left: 10px;">enter a text and url</h1>
+        <input type="text" id="qrtext" style="margin-left: 20%; margin-top: 20%; color: white;">
+        <div id="imgbox" style="margin-top: 20px; margin-left: 100px;">
+            <img src="" alt="" id="qrimage">
+        </div>
+        <div id="btn">
+            <button onclick="GenerateQr()" style="margin-left: 32%;margin-top: 20px;color: white;">Generate Qr
+                Code</button>
+        </div>
+        <p id="res"></p>
+    </div>
+
+    <script>
+        function GenerateQr() {
+            let qrtext = document.getElementById('qrtext').value;
+            let qrimage = document.getElementById('qrimage');
+            let imgbox = document.getElementById('imgbox');
+
+            if (qrtext == '') {
+                let res = document.getElementById('res');
+                res.innerHTML = '<b>enter text and url<b>'
+                console.log('enter text and url');
+            }
+            else {
+                // api : https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=
+                qrimage.src = 'https://api.qrserver.com/v1/create-qr-code/?size=100x100&data=' + qrtext;
+            }
+
+
+        }
+
+    </script>
+</body>
+
+</html>
